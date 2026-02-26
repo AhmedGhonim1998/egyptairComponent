@@ -1,0 +1,138 @@
+.dashboard-container {
+  padding: 40px;
+  background-color: #f8faff;
+  min-height: 100vh;
+}
+
+/* Header */
+.db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.db-header h1 {
+  color: #00256D;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.db-header p {
+  color: #718096;
+}
+
+/* Stat Cards */
+.stat-card.gold {
+  background: white;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-right: 5px solid #c5a059;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.stat-card i {
+  color: #c5a059;
+  font-size: 1.5rem;
+}
+
+/* Info Cards */
+.info-card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 37, 109, 0.05);
+  transition: transform 0.3s ease;
+  text-align: right;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.card-icon.blue { background: #ebf4ff; color: #0056ff; }
+.card-icon.green { background: #f0fff4; color: #38a169; }
+.card-icon.gold-bg { background: #fffaf0; color: #c5a059; }
+
+.info-card h3 {
+  font-size: 1rem;
+  color: #718096;
+  margin-bottom: 10px;
+}
+
+.info-card .count {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #00256D;
+  margin-bottom: 15px;
+}
+
+/* Table Section */
+.content-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 37, 109, 0.05);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th {
+  padding: 15px;
+  color: #718096;
+  font-weight: 600;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.custom-table td {
+  padding: 20px 15px;
+  border-bottom: 1px solid #edf2f7;
+  color: #2d3748;
+}
+
+.badge.confirmed {
+  background: #c6f6d5;
+  color: #2f855a;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.btn-manage {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-manage:hover {
+  background: #00256D;
+  color: white;
+}
