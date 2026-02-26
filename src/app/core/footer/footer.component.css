@@ -1,0 +1,236 @@
+.main-footer {
+  background-color: #00256D; /* نفس لون الزرار والبراند */
+  color: #ffffff;
+  padding: 80px 0 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Brand Section */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  height: 50px;
+  filter: brightness(0) invert(1); /* جعل اللوجو أبيض بالكامل */
+}
+
+.footer-brand .brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.footer-desc {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+/* Titles & Links */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0; /* لأن الموقع عربي */
+  width: 40px;
+  height: 2px;
+  background-color: #c5a059; /* لمسة ذهبية */
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.footer-links li a:hover {
+  color: #c5a059;
+  padding-right: 10px; /* حركة بسيطة عند الهوفر */
+}
+
+/* Social Media */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #c5a059;
+  transform: translateY(-3px);
+}
+
+/* Newsletter */
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.newsletter-form .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 8px;
+}
+
+.newsletter-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-subscribe {
+  background-color: #c5a059;
+  color: #00256D;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Bottom Footer */
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0 20px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.payment-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+
+/* --- الإعدادات العامة للـ Footer --- */
+.main-footer {
+  background-color: #00256D;
+  color: #ffffff;
+  padding: 60px 0 20px;
+  
+}
+
+/* ضبط اللوجو في الفوتر */
+.footer-logo {
+  height: 50px;
+  margin-bottom: 20px;
+  /* لجعل اللوجو يظهر بوضوح لو كان غامق */
+  filter: brightness(0) invert(1); 
+}
+
+/* --- Media Queries للتجاوب --- */
+
+/* للموبايل (أصغر من 768px) */
+@media (max-width: 767.98px) {
+  .main-footer {
+    text-align: center; /* سنتره كل شيء في الموبايل لشكل أرتب */
+    padding: 40px 0 20px;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    display: flex;
+  }
+
+  .footer-title::after {
+    right: 50% !important;
+    transform: translateX(50%); /* سنتره الخط الذهبي تحت العنوان */
+  }
+
+  .social-links {
+    justify-content: center; /* سنتره أيقونات السوشيال ميديا */
+    margin-bottom: 30px;
+  }
+
+  .newsletter-form {
+    flex-direction: column; /* ترتيب حقل الإيميل والزرار تحت بعض */
+    gap: 15px;
+  }
+
+  .btn-subscribe {
+    width: 100%; /* الزرار ياخد العرض كامل في الموبايل */
+  }
+
+  .footer-bottom {
+    flex-direction: column-reverse; /* وضع الحقوق تحت أيقونات الدفع */
+    gap: 20px;
+  }
+
+  .payment-icons {
+    justify-content: center;
+  }
+}
+
+/* تباعد الأعمدة في التابلت */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .col-md-6 {
+    margin-bottom: 40px;
+  }
+}
+
+/* --- تحسينات إضافية للأشكال --- */
+
+
+@media (max-width: 767.98px) {
+  .main-footer .row {
+    flex-direction: column; /* يرجعهم فوق بعض في الموبايل */
+  }
+  .main-footer {
+    text-align: center; /* سنترة المحتوى في الموبايل لشكل أفضل */
+  }
+}
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}

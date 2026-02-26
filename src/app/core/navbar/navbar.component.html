@@ -1,0 +1,34 @@
+<div class="nav-wrapper container-fluid">
+  <nav class="custom-navbar">
+    <div class="nav-brand">
+      <img src="images/egyptair-logo.png" alt="EgyptAir" class="main-logo">
+    </div>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li class="cursor"><a routerLink="/pricing" (click)="isMenuOpen=false">الأسعار</a></li>
+      <li class="dropdown-item cursor">
+        <a routerLink="/destinations" class="has-dropdown">الوجهات <i class="fas fa-chevron-down ms-1"></i></a>
+      </li>
+      <li class="dropdown-item cursor">
+        <a routerLink="/features" class="has-dropdown">الخدمات <i class="fas fa-chevron-down ms-1"></i></a>
+      </li>
+      <li class="cursor"><a routerLink="/bookings" (click)="isMenuOpen=false">حجوزاتي</a></li>
+      
+      <li class="mobile-only-actions">
+          <a routerLink="/login" class="btn-login" (click)="isMenuOpen=false">تسجيل دخول</a>
+          <a routerLink="/signup" class="btn-signup" (click)="isMenuOpen=false">انشاء حساب</a>
+      </li>
+    </ul>
+
+    <div class="nav-actions hide-mobile">
+        <a routerLink="/login" class="btn-login">تسجيل دخول</a>
+        <a routerLink="/signup" class="btn-signup">انشاء حساب</a>
+    </div>
+
+    <div class="hamburger" (click)="toggleMenu()" [class.open]="isMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+  </nav>
+</div>

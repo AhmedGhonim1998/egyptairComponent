@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+main {
+  padding-top: 110px; /* المسافة دي هتحمي المحتوى إنه يدخل تحت النافبار */
+  min-height: 80vh;   /* بتضمن إن الفوتر يفضل تحت خالص حتى لو الصفحة فاضية */
+}

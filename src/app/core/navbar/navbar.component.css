@@ -1,0 +1,234 @@
+:root {
+  --egy-blue: #00256D;
+  --text-main: #2D3748;
+  --text-muted: #718096;
+  --ea-accent: #0056ff; /* لون الـ Blue Action */
+  --ea-gold-light: #fdfcf0;
+}
+
+.nav-wrapper {
+  padding: 25px 50px; /* مساحة أكبر حول النافبار لتعزيز شكل الـ Floating */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.custom-navbar {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
+  height: 80px; /* ارتفاع ثابت عشان اللوجو ياخد راحته */
+  border-radius: 16px; /* زوايا أنعم */
+  box-shadow: 0 10px 30px rgba(0, 37, 109, 0.08); /* ظل أعمق وأفخم */
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* تكبير اللوجو */
+.main-logo {
+  height: 45px; /* كبرنا اللوجو زي ما طلبت */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.main-logo:hover {
+  transform: scale(1.05);
+}
+
+/* الروابط في المنتصف */
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 35px; /* مسافات أوسع بين اللينكات */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  padding: 8px 0;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: var(--ea-accent);
+}
+
+.nav-scrolled {
+  height: 70px !important; /* بيصغر شوية لما تنزل تحت */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important;
+}
+
+.btn-signup {
+  background-color: #00256D; /* اللون اللي طلبته بالضبط */
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  /* خليت الظل أنعم شوية عشان يليق مع اللون السوليد */
+  box-shadow: 0 4px 12px rgba(0, 37, 109, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-signup:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 37, 109, 0.35);
+  background-color: #00256D; /* ثابت عند الهوفر */
+}
+
+/* إلغاء أي تغيير لوني عند الضغط أو التحديد */
+.btn-signup:active, .btn-signup:focus {
+  transform: translateY(-1px);
+  background-color: #00256D !important;
+  box-shadow: 0 4px 12px rgba(0, 37, 109, 0.2) !important;
+}
+/* زرار الـ Login (الشفاف) */
+.btn-login {
+  color: var(--egy-blue);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 10px 24px;
+  border-radius: 10px;
+  border: 2px solid var(--egy-blue);
+  background: transparent;
+  transition: transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  /* خليت الهوفر خفيف جداً يغير لون الحدود بس لو حابب، أو ثبت الألوان */
+  border-color: var(--egy-blue);
+  background: transparent; 
+  color: var(--egy-blue) !important;
+}
+
+.btn-login:active, .btn-login:focus {
+  background: transparent !important;
+  color: var(--egy-blue) !important;
+  transform: translateY(0);
+}
+
+/* الموبايل */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--egy-blue);
+  cursor: pointer;
+}
+
+/* الشكل الافتراضي (لما تكون فوق خالص) */
+.custom-navbar {
+  transition: all 0.4s ease; /* ضروري عشان التغيير يكون ناعم */
+  background-color: #ffffff;
+}
+
+/* الشكل لما تنزل بالـ Scroll */
+.nav-scrolled {
+  background-color: #f8f9fa !important; /* تغيير اللون لخلفية رمادية فاتحة */
+  height: 65px !important; /* تصغير الارتفاع شوية */
+  box-shadow: 0 8px 25px rgba(0, 37, 109, 0.15) !important; /* ظل أقوى */
+  padding: 5px 30px !important; /* تقليل المسافات الداخلية */
+}
+
+
+
+
+
+/* --- إعدادات الموبايل (أقل من 992px) --- */
+@media (max-width: 992px) {
+    .nav-links {
+        position: absolute;
+        top: 90px; /* تحت النافبار بالظبط */
+        left: 20px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        gap: 0 !important;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        padding: 20px;
+        display: none !important; /* مخفية افتراضياً */
+        z-index: 2000;
+        border: 1px solid #eee;
+    }
+
+    .nav-links.active {
+        display: flex !important; /* تظهر لما نضغط على الهامبرجر */
+        animation: slideIn 0.3s ease forwards;
+    }
+
+    .nav-links li {
+        width: 100%;
+        padding: 15px 10px;
+        border-bottom: 1px solid #f5f5f5;
+    }
+
+    .hide-mobile { display: none; }
+    
+    .mobile-only-actions {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+        border-bottom: none !important;
+    }
+
+    /* شكل زرار الهامبرجر */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #00256D;
+        transition: 0.3s;
+        border-radius: 3px;
+    }
+
+    /* حركة X لما يفتح المنيو */
+    .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تأكيد إن الهامبرجر مخفي في الديسكتوب */
+.hamburger { display: none; }
+.mobile-only-actions { display: none; }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .mobile-toggle { display: block; }
+  .nav-wrapper { padding: 15px; }
+}
