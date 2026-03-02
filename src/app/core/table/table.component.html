@@ -1,0 +1,63 @@
+<div class="flights-container">
+  <div class="flights-header">
+    <h2>
+      <i class="fas fa-plane-departure"></i> My Upcoming Flights
+    </h2>
+    <button class="btn-primary">
+      <i class="fas fa-plus-circle"></i> Book New Flight
+    </button>
+  </div>
+
+  <div class="flights-table-wrapper">
+    <table class="flights-table">
+      <thead>
+        <tr>
+          <th>Flight No.</th>
+          <th>Route</th>
+          <th>Departure</th>
+          <th>Class</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights">
+          <td class="flight-no">
+            <span class="flight-badge">{{ flight.no }}</span>
+          </td>
+          <td class="route">
+            <div class="route-display">
+              <span class="city">{{ flight.from }}</span>
+              <i class="fas fa-long-arrow-alt-right"></i>
+              <span class="city">{{ flight.to }}</span>
+            </div>
+          </td>
+          <td class="departure">
+            <div class="datetime">
+              <span class="date">{{ flight.date }}</span>
+              <span class="time">{{ flight.time }}</span>
+            </div>
+          </td>
+          <td>
+            <span class="class-tag">{{ flight.class }}</span>
+          </td>
+          <td>
+            <span class="status" [ngClass]="flight.statusClass">
+              {{ flight.status }}
+            </span>
+          </td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn-icon edit" title="Edit">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn-icon cancel" title="Cancel">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
