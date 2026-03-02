@@ -1,0 +1,220 @@
+:host {
+  --sidebar-bg: #001a4f;               /* darker, distinct from footer */
+  --sidebar-gradient: linear-gradient(145deg, #001a4f 0%, #00256D 100%);
+  --sidebar-width: 280px;
+  --accent-gold: #c5a059;
+  --text-dim: rgba(255, 255, 255, 0.7);
+  --glass-effect: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== TOGGLE BUTTON (floating) ===== */
+.sidebar-toggle {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--accent-gold);
+  border: none;
+  border-radius: 25px;          /* pill shape */
+  color: #001a4f;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1100;
+}
+
+.sidebar-toggle:hover {
+  transform: scale(1.05);
+  background: #d4af37;
+}
+
+/* ===== SIDEBAR (sliding) ===== */
+.dynamic-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  background: var(--sidebar-gradient);
+  color: #ffffff;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* bounce effect */
+  transform: translateX(-100%);  /* hidden by default */
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.dynamic-sidebar.open {
+  transform: translateX(0);      /* slide in */
+}
+
+.sidebar-inner {
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ===== LOGO ===== */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-logo {
+  height: 45px;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== USER INFO ===== */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  padding: 12px;
+  background: var(--glass-effect);
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+  object-fit: cover;
+}
+
+.user-details h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.user-details p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ===== NAVIGATION ===== */
+.sidebar-nav {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
+}
+
+.nav-link i {
+  width: 24px;
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  text-align: center;
+}
+
+.nav-link:hover {
+  background: rgba(197, 160, 89, 0.15);
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background: rgba(197, 160, 89, 0.25);
+  color: #ffffff;
+  border-left: 4px solid var(--accent-gold);
+}
+
+/* ===== FOOTER CARDS ===== */
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--glass-effect);
+  border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+.stats-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--accent-gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001a4f;
+  font-size: 1.2rem;
+}
+
+.stats-info h5 {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.stats-info p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin: 0;
+}
+
+.logout-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.logout-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .dynamic-sidebar {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .sidebar-toggle {
+    left: 15px;
+    top: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
